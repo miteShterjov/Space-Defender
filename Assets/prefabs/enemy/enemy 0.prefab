@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 2316002660241567890}
   - component: {fileID: -2417588756843237476}
   - component: {fileID: -4239784199548646631}
+  - component: {fileID: 6792850760227878832}
   m_Layer: 7
   m_Name: enemy 0
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 6776402039378929513}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4, z: 0}
+  m_LocalPosition: {x: 0, y: 4.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -137,7 +138,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc50c0b8a9ef6014bb76450f5a33db42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 10
+  boomVFX: {fileID: 7285420927104751096, guid: 3d2510e318160f34fb2252694796c683, type: 3}
+  applyCameraShake: 0
+  isPlayer: 0
+--- !u!114 &6792850760227878832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6776402039378929513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93c2fea3941c14249b66857588e6e184, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 2838615397513045861, guid: e1c091b73cdaa8140a985124ef264e7b, type: 3}
+  projectileSpeed: 10
+  projectileLifeTime: 51
+  fireRate: 1
+  useByAI: 1
 --- !u!1 &8242080989575314054
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,13 +184,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8242080989575314054}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1399116512186648939}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!212 &6560083810769354325
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1101738776185528683}
   - component: {fileID: 450348861166283805}
   - component: {fileID: 8260751532719366788}
+  - component: {fileID: 8883265915076239632}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -276,6 +277,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  boomVFX: {fileID: 7285420927104751096, guid: 3d2510e318160f34fb2252694796c683, type: 3}
+  applyCameraShake: 1
+  isPlayer: 1
 --- !u!114 &8260751532719366788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,6 +296,20 @@ MonoBehaviour:
   projectileSpeed: 10
   projectileLifeTime: 51
   fireRate: 0.2
+  useByAI: 0
+--- !u!114 &8883265915076239632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189265031096324532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 119477528d98ac14db5822e4a9bd63dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!1 &6974185508109995672
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,7 +385,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 9999
+  m_SortingOrder: 1
   m_Sprite: {fileID: 6540657719654231131, guid: a0dab2e40c27f0c4584102fdd8b7a4ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
