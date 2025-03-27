@@ -84,6 +84,13 @@ public class Health : MonoBehaviour
                 playeShieldPerk = playerShield.GetComponent<ShieldPerkActive>();
             }
         }
+        if (other.CompareTag("Enemy"))
+        {
+            if (isPlayer)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 
     private void ShakeCamera()
