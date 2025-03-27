@@ -69,4 +69,8 @@ public class Player : MonoBehaviour
 
         shooter.IsFiring = inputValue.isPressed;
     }
+    public void Shoot(bool isPressed)
+    {
+        shooter.IsFiring = isPressed;
+    }
 }
