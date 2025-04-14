@@ -150,3 +150,4 @@ MonoBehaviour:
   moveSpeed: 2
   delay: 10
   healthPerk: 10
+  perkName: HealthPerk

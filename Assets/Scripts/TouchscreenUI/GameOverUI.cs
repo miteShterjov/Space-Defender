@@ -8,5 +8,6 @@ public class GameOverUI : MonoBehaviour
     void Start()
     {
         killCountText.text = "Kill count: \n" + ScoreKeeper.Instance.GetScore();
+        ScoreKeeper.Instance.DisplayHighScores();
     }
 }

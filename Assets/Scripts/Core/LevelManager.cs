@@ -17,6 +17,11 @@ public class LevelManager : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 
+    public void LoadHallOfFame()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+    }
+
     public void LoadGameOver()
     {
         StartCoroutine(WaitAndLoad("GameOver", sceneLoadDelay));

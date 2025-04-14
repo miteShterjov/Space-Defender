@@ -29,9 +29,9 @@ public class ObstacleSpawner : MonoBehaviour
             GetRandomSpawnTime(out float spawnTime);
             yield return new WaitForSeconds(spawnTime);
             GetRandomSpawnCord(out Vector3 spawnCord);
-            GetRandomSprite(out GameObject obstacle);
-            Instantiate(obstacle, spawnCord, Quaternion.identity);
-            obstacle.tag = "Obstacle";
+            Instantiate(obstaclePrefab, spawnCord, Quaternion.identity);
+            SetRandomSprite(obstaclePrefab);
+            obstaclePrefab.tag = "Obstacle";
         }
         while (true);
     }
@@ -42,9 +42,9 @@ public class ObstacleSpawner : MonoBehaviour
         spawnCord = new Vector3(x, transform.position.y, transform.position.z);
     }
 
-    private void GetRandomSprite(out GameObject obstacle)
+    private void SetRandomSprite(GameObject obstacle)
     {
-        obstacle = Instantiate(obstaclePrefab); // Instantiate the obstacle
+        //obstacle = Instantiate(obstaclePrefab); // Instantiate the obstacle
         int randomSpriteIndex = UnityEngine.Random.Range(0, obstacleSprites.Length);
         obstacle.GetComponent<SpriteRenderer>().sprite = obstacleSprites[randomSpriteIndex];
     }

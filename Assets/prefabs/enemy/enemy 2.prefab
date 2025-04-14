@@ -138,7 +138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc50c0b8a9ef6014bb76450f5a33db42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  currentHealth: 30
+  maxHealth: 30
   boomVFX: {fileID: 7285420927104751096, guid: 3d2510e318160f34fb2252694796c683, type: 3}
   applyCameraShake: 0
   isPlayer: 0

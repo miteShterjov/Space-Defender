@@ -1,14 +1,14 @@
-using System;
+using System.Collections;
 using UnityEngine;
 
-public class HealthPerk : MonoBehaviour, IPerk
+public class PowerPerk : MonoBehaviour, IPerk
 {
+    [SerializeField] private string perkName = "PowerPerk";
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private float delay = 10f;
-    [SerializeField] private int healthPerk = 10;
-    [SerializeField] private string perkName = "HealthPerk";
+    
 
-    public string PerkName { get => perkName; set => PerkName = value; }
+    public string PerkName { get => perkName; set => perkName = value; }
 
     void Update()
     {
@@ -18,8 +18,9 @@ public class HealthPerk : MonoBehaviour, IPerk
 
     public void ApplyPerkEffect(GameObject player)
     {
-        if (player.GetComponent<Health>().CurrentHealth == player.GetComponent<Health>().MaxHealth) return;
-        player.GetComponent<Health>().AddPlayerHealth(healthPerk);
+        //while this perk is active the player will shoot 3 projectiles at once
+        //if the player already has this perk, don't apply it again
+        player.GetComponent<Shooter>().HasPowerPerk = true;
         Destroy(gameObject);
     }
 
@@ -32,4 +33,5 @@ public class HealthPerk : MonoBehaviour, IPerk
     {
         Destroy(gameObject, delay);
     }
+
 }
