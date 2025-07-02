@@ -36,11 +36,14 @@ public class Player : MonoBehaviour
         PlayerMove();
     }
 
+    // Initializes the bounds based on the camera's viewport
+    // This method is called once at the start of the game.
+    // It calculates the minimum and maximum bounds of the player's movement area
     private void InitBounds()
     {
         Camera mainCamera = Camera.main;
-        minBounds = mainCamera.ViewportToWorldPoint(new Vector2(0, 0));
-        maxBounds = mainCamera.ViewportToWorldPoint(new Vector2(1, 1));
+        minBounds = mainCamera.ViewportToWorldPoint(new Vector2(0f, 0f)); // Bottom-left corner
+        maxBounds = mainCamera.ViewportToWorldPoint(new Vector2(1f, 1f)); // Top-right corner
     }
 
     private void PlayerMove()

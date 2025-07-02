@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cockpitRed_4_0: -8821039233047531398
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

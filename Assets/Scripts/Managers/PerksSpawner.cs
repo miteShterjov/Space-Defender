@@ -8,8 +8,8 @@ public class PerksSpawner : MonoBehaviour
     [SerializeField] float minSpawnTime = 10f;
     [SerializeField] float maxSpawnTime = 30f;
 
-    private float minXSpawnCord = -2f;
-    private float maxXSpawnCord = 2f;
+    private float minXSpawnCord = -6f;
+    private float maxXSpawnCord = 6f;
 
 
     private void Start()

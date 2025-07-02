@@ -104,7 +104,7 @@ public class Health : MonoBehaviour
                 }
             }
         }
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") || other.CompareTag("Boss"))
         {
             if (isPlayer)
             {
@@ -143,7 +143,7 @@ public class Health : MonoBehaviour
     }
 
     private void TakeDamage(int damageValue)
-    {
+    { 
         CurrentHealth -= damageValue;
         audioPlayer.PlayDamageSound();
         if (CurrentHealth <= 0)
@@ -159,8 +159,14 @@ public class Health : MonoBehaviour
             {
                 ScoreKeeper.Instance.AddScore();
                 print("Player died, time to load game over scene");
-                levelManager.LoadGameOver();
                 Destroy(gameObject);
+                levelManager.LoadGameOver();
+            }
+            if (CompareTag("Boss"))
+            {
+                ScoreKeeper.Instance.AddScore();
+                Destroy(gameObject);
+                levelManager.LoadWinScene();
             }
         }
     }

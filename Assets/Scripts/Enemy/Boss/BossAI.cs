@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+//using System.Numerics;
 using UnityEngine;
 
 public class BossAI : MonoBehaviour
@@ -14,29 +15,31 @@ public class BossAI : MonoBehaviour
     [Header("Attack Settings")]
     [SerializeField] private float attackDuration = 3f;
     [SerializeField] private float attackCooldown = 5f;
+    
     private float attackTimer;
-    private float cooldownTimer;
 
     [Header("Roaming Settings")]
     [SerializeField] private float roamSpeed = 2f;
-    private Transform nextRoamPoint;
-    private int currentRoamIndex = 0;
+    [SerializeField] private float cooldownTimer = 3f;
+    private Vector2 currentPos;
+    private Vector2 nextPos;
+    private Vector2 startingPos = new Vector2(0.07f,2.32f);
 
     void Start()
     {
-        currentState = BossState.Attacking;
-        attackTimer = attackDuration;
+        transform.position = Vector2.MoveTowards(transform.position, startingPos, roamSpeed * Time.deltaTime);
+        nextPos = GetNextRoamPosition(currentPos);
     }
 
     void Update()
     {
         switch (currentState)
         {
-            case BossState.Attacking:
-                Attack();
-                break;
             case BossState.Roaming:
                 Roam();
+                break;
+            case BossState.Attacking:
+                Attack();
                 break;
         }
     }
@@ -58,31 +61,57 @@ public class BossAI : MonoBehaviour
 
     void Roam()
     {
+        float delay = 1f;
         print("Boss is ROAMING!");
-        Vector2 nextPos = GetNextRoamPosition();
-        
-        transform.position = Vector2.MoveTowards(transform.position, nextPos, roamSpeed * Time.deltaTime);
-
-        if (Vector2.Distance(transform.position, nextPos) < 0.1f)
-        {
-            nextPos = GetNextRoamPosition();
-        }
 
         cooldownTimer -= Time.deltaTime;
         if (cooldownTimer <= 0)
         {
             attackTimer = attackDuration;
             currentState = BossState.Attacking;
+            return;
         }
+
+        transform.position = Vector2.MoveTowards(transform.position, nextPos, roamSpeed * Time.deltaTime);
+        StartCoroutine(SmallBreakCourutine(delay));
+
+        if (Vector2.Distance(transform.position, nextPos) < 0.4f)
+        {
+            nextPos = GetNextRoamPosition(currentPos);
+            transform.position = Vector2.MoveTowards(transform.position, nextPos, roamSpeed * Time.deltaTime);
+            
+        }
+
     }
 
-    private Vector2 GetNextRoamPosition()
+    private IEnumerator SmallBreakCourutine(float delay)
     {
-        float minX = -1.3f;
-        float maxX = 1.3f;
-        float minY = 0f;
-        float maxY = 2f;
-        print("Roaming to new position: " + new Vector2(UnityEngine.Random.Range(minX, maxX), UnityEngine.Random.Range(minY, maxY)));
-        return new Vector2(UnityEngine.Random.Range(minX, maxX), UnityEngine.Random.Range(minY, maxY));
+        yield return new WaitForSeconds(delay);
+        Debug.Log("1 second has passed.");
+    }
+
+    private Vector2 GetNextRoamPosition(Vector2 currentPos)
+    {
+        Vector2[] positions = new Vector2[8];
+        positions[0] = new Vector2(0.14f, 2.41f);
+        positions[1] = new Vector2(-1.31f, 0.65f);
+        positions[2] = new Vector2(1.49f, 0.9f);
+        positions[3] = new Vector2(-0.5f, 1.5f);
+        positions[4] = new Vector2(1.32f, 2.39f);
+        positions[5] = new Vector2(1.57f, 2.11f);
+        positions[6] = new Vector2(1.7f, 1.26f);
+        positions[7] = new Vector2(1.04f, 1.27f);
+
+        Vector2 nextPos = positions[UnityEngine.Random.Range(0, positions.Length)];
+        // check if the next position is the same as the current position
+        while (nextPos == currentPos)
+        {
+            nextPos = positions[UnityEngine.Random.Range(0, positions.Length)];
+        }
+
+        return nextPos;
+
+
+
     }
 }

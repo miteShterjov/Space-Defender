@@ -410,7 +410,18 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spaceShooter2_spritesheet_2X_0: 3379132993820532035
+      spaceShooter2_spritesheet_2X_1: -5910287855394996211
+      spaceShooter2_spritesheet_2X_10: -7334219549506714498
+      spaceShooter2_spritesheet_2X_2: -4849014219572865507
+      spaceShooter2_spritesheet_2X_3: 4107170570318989368
+      spaceShooter2_spritesheet_2X_4: -5414236445767620114
+      spaceShooter2_spritesheet_2X_5: -1906399547301107165
+      spaceShooter2_spritesheet_2X_6: 774876434905109579
+      spaceShooter2_spritesheet_2X_7: -8410335399633580802
+      spaceShooter2_spritesheet_2X_8: -5725898606582682320
+      spaceShooter2_spritesheet_2X_9: -5104113530630211204
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

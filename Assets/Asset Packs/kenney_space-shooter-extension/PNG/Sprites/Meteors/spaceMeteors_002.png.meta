@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spaceMeteors_002_0: -6189053007962791788
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

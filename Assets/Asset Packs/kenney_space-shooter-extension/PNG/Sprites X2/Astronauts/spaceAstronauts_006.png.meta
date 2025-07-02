@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spaceAstronauts_006_0: -329866286808612372
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

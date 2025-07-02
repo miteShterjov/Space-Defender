@@ -285,7 +285,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spaceShooter2_spritesheet_0: 4391339855156711628
+      spaceShooter2_spritesheet_1: 566286709894180379
+      spaceShooter2_spritesheet_2: -1213371166595922607
+      spaceShooter2_spritesheet_3: 2335728942947083262
+      spaceShooter2_spritesheet_4: 9087010254543534849
+      spaceShooter2_spritesheet_5: -2238818436359967044
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -20,9 +20,17 @@ public class BossShooter : MonoBehaviour
 
     public bool IsShooting { get => isShooting; set => isShooting = value; }
 
+    //get boss health and then based on boss health change attack patterns
+    private int currentBossHealth;
+
     void Start()
     {
         player = FindAnyObjectByType<Player>();
+    }
+    void Update()
+    {
+        currentBossHealth = GetComponent<Health>().CurrentHealth;
+        print(currentBossHealth);
     }
 
     private void OnValidate()
@@ -50,6 +58,26 @@ public class BossShooter : MonoBehaviour
     private IEnumerator ShootRoutine()
     {
         IsShooting = true;
+
+        if (currentBossHealth <= 0) { yield break; }
+
+        if (currentBossHealth <= 30)
+        {
+            oscillate = false;
+            stagger = false;
+            angleSpread = 60;
+            timeBetweenBursts = 0.8f;
+            restTime = 0.6f;
+            projectilesPerBurst = 4;
+        }
+
+        if (currentBossHealth <= 60)
+        {
+            timeBetweenBursts = 0.6f;
+            restTime = .6f;
+            projectilesPerBurst = 4;
+            angleSpread = 60f;
+        }
 
         float startAngle, currentAngle, angleStep, endAngle;
         float timeBetweenProjectiles = 0f;

@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      powerupBlue_shield_0: 5522079243339103098
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

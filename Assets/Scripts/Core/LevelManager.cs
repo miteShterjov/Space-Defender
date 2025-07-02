@@ -27,9 +27,13 @@ public class LevelManager : MonoBehaviour
         StartCoroutine(WaitAndLoad("GameOver", sceneLoadDelay));
     }
 
-    public void LoadGameOver(int delay)
+    public void LoadGameOver(float delay)
     {
         StartCoroutine(WaitAndLoad("GameOver", sceneLoadDelay));
+    }
+    public void LoadWinScene()
+    {
+        StartCoroutine(WaitAndLoad("WinGame", sceneLoadDelay));
     }
 
     public void QuitGame()

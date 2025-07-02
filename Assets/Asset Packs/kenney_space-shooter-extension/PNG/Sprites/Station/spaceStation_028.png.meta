@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spaceStation_028_0: 449607424711367612
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

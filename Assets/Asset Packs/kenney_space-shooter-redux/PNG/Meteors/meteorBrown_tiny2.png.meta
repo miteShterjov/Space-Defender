@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      meteorBrown_tiny2_0: -2059301777156014197
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

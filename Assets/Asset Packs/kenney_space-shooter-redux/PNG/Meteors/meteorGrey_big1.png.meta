@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      meteorGrey_big1_0: 6171837545649669406
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

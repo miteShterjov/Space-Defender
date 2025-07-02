@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    [SerializeField] private GameObject bossPrefab;
     [SerializeField] private List<WaveConfigSO> waveConfigs;
     [SerializeField] private float timeBetweenWaves = 0.5f;
     [SerializeField] private bool isLooping = false;
     private WaveConfigSO currentWave;
+    private int bossSpawnDelay = 1;
 
     void Start()
     {
@@ -39,7 +41,22 @@ public class EnemySpawner : MonoBehaviour
             }
             */
         } while (isLooping);
+
+        Invoke("SpawnBoss", bossSpawnDelay);
+        yield return new WaitForSeconds(timeBetweenWaves);
     }
+
+    private void SpawnBoss()
+    {
+        Instantiate(
+            bossPrefab,
+            new Vector3(0,5,0),
+            Quaternion.identity,
+            null
+            );
+        Debug.Log("Boss Spawned!");
+    }
+
 
     private IEnumerator SpawnAllEnemiesInWave()
     {

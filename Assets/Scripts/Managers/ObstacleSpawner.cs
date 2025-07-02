@@ -9,8 +9,8 @@ public class ObstacleSpawner : MonoBehaviour
     [SerializeField] float maxSpawnTime = 20f;
     [SerializeField] float spawnerStartTime = 25f;
 
-    private float minXSpawnCord = -2f;
-    private float maxXSpawnCord = 2f;
+    private float minXSpawnCord = -6f;
+    private float maxXSpawnCord = 6f;
 
     private void Start()
     {

@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      powerupGreen_bolt_0: -7275878305617495303
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

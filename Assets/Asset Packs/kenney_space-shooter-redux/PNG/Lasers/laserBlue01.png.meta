@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      laserBlue01_0: -4854367162513635942
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

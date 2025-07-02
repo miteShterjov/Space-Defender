@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spaceShips_008_0: -1691645450770174127
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
